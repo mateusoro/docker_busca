@@ -5,7 +5,7 @@ START_DIR=/home/coder/busca
 cd ~/busca
 #node backup_automatico.js&
 pip3 install requests_html flask imdbpy bson pymongo dnspython imdbparser guessit flask_socketio mysql-connector-python
-
+echo $PORT
 python3 buscar_mysql.py
 
 # Now we can run code-server with the default entrypoint
