@@ -49,6 +49,7 @@ RUN sudo rclone sync rclone:/docker_buscar /home/coder/ -vv --exclude="**node_mo
 #RUN cd /home/coder/.local/share/code-server/extensions && sudo npm install fs-cp fs-walk ftp lodash mkdirp scp2 ssh2 stat-mode upath vscode
 #RUN cd /home/coder/busca && sudo npm install tulind csv-load-sync async-get-file async-get-file express path localtunnel cron shelljs
 
+
 RUN sudo chown -R coder:coder /home/
 
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
