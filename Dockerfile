@@ -22,8 +22,8 @@ RUN sudo apt-get install -y build-essential
 # RUN COPY myTool /home/coder/myTool
 
 # Install NodeJS
-RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
-RUN sudo apt-get install -y nodejs
+#RUN sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
+#RUN sudo apt-get install -y nodejs
 RUN sudo apt-get install -y python3
 RUN sudo apt-get install -y python3-pip
 RUN sudo apt-get install -y python-libtorrent
@@ -46,8 +46,8 @@ COPY deploy-container/rclone.conf /home/coder/.config/rclone/rclone.conf
 COPY deploy-container/rclone.conf /root/.config/rclone/rclone.conf
 
 RUN sudo rclone sync rclone:/docker_buscar /home/coder/ -vv --exclude="**node_modules/**"  --exclude="**\.npm/**" --exclude="**site-packages/**" --exclude="**\.cache/**" --exclude="**downloads/**"
-RUN cd /home/coder/.local/share/code-server/extensions && sudo npm install fs-cp fs-walk ftp lodash mkdirp scp2 ssh2 stat-mode upath vscode
-RUN cd /home/coder/busca && sudo npm install tulind csv-load-sync async-get-file async-get-file express path localtunnel cron shelljs
+#RUN cd /home/coder/.local/share/code-server/extensions && sudo npm install fs-cp fs-walk ftp lodash mkdirp scp2 ssh2 stat-mode upath vscode
+#RUN cd /home/coder/busca && sudo npm install tulind csv-load-sync async-get-file async-get-file express path localtunnel cron shelljs
 
 RUN sudo chown -R coder:coder /home/
 
